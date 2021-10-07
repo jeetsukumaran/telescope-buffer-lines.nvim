@@ -14,7 +14,13 @@ You can setup the extension by doing
 require('telescope').load_extension('buffer_lines')
 ```
 
-somewhere after your `require('telescope').setup()` call.
+somewhere after your `require('telescope').setup()` call (in your ``init.vim`` or ``init.lua``).
+
+Bind to key:
+
+```vim
+nnoremap <C-f>l <cmd>Telescope buffer_lines<cr>
+```
 
 ## Available functions
 
