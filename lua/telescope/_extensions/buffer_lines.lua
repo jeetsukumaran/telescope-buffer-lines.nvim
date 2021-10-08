@@ -41,7 +41,10 @@ local buffer_lines = function(opts)
             actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()
-                vim.api.nvim_put({ selection.value }, "", false, true)
+                -- Strip leading whitespace
+                -- local svalue = selection.value:gsub("^%s*(.-)%s*$", "%1")
+                local svalue = selection.value
+                vim.api.nvim_put({ svalue }, "l", true, true)
             end)
             return true
         end
